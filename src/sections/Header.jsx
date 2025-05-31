@@ -1,14 +1,12 @@
 // src/components/Header.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { Globe } from "lucide-react";
-import esFlag from "../assets/flags/es.svg";
-import enFlag from "../assets/flags/en.svg";
-import ptFlag from "../assets/flags/pt.svg";
 
+// Ruta a las banderas en public/
 const languages = {
-  es: { label: "ES", flag: esFlag },
-  en: { label: "EN", flag: enFlag },
-  pt: { label: "PT", flag: ptFlag },
+  es: { label: "ES", flag: "/flags/es.svg" },
+  en: { label: "EN", flag: "/flags/en.svg" },
+  pt: { label: "PT", flag: "/flags/pt.svg" },
 };
 
 export default function Header({ lang, setLang }) {

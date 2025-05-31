@@ -48,16 +48,14 @@ export default function FlagCarousel({ lang = "es" }) {
 
   return (
     <div className="bg-transparent py-8 border-b border-white/10 text-center">
-      {/* Título pequeño y elegante */}
       <p className="text-sm md:text-base text-gray-400 font-medium mb-6">{t}</p>
 
-      {/* Carrusel de banderas */}
       <div className="overflow-hidden">
         <div className="flex gap-6 animate-slide whitespace-nowrap w-max">
           {countryCodes.concat(countryCodes).map((code, index) => (
             <img
               key={index}
-              src={`/src/assets/flags/${code}.svg`}
+              src={`/flags/${code}.svg`}
               alt={code.toUpperCase()}
               className="w-10 h-auto rounded shadow-md transition-transform duration-500 hover:scale-110"
             />
