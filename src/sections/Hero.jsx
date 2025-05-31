@@ -47,11 +47,22 @@ export default function Hero({ lang }) {
 
         <motion.a
           href="#planes"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="inline-block mt-10 bg-[#ffc107] text-black font-extrabold py-3 px-10 rounded-full text-lg shadow-md hover:shadow-[#ffc107]/50 transition-all duration-300"
+          initial={{ scale: 1 }}
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="relative inline-block mt-10 py-3 px-10 rounded-full text-lg font-extrabold text-black bg-[#ffc107] shadow-md overflow-hidden z-10"
         >
-          {t.button} ⚡
+          {/* Borde giratorio brillante en loop */}
+          <span className="absolute inset-0 rounded-full border-2 border-yellow-400 before:content-[''] before:absolute before:inset-0 before:rounded-full before:border-2 before:border-yellow-400 before:animate-glow-ring z-0"></span>
+
+          {/* Shimmer automático */}
+          <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-70 animate-shimmer rounded-full z-0" />
+
+          <span className="relative z-10">{t.button}</span>
         </motion.a>
       </div>
     </section>

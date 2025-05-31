@@ -52,7 +52,7 @@ export default function MZBetsLanding() {
       {/* CTA flotante fijo */}
       <a
         href="#planes"
-        className="fixed bottom-6 right-6 bg-[#ffc107] text-black font-bold px-5 py-3 rounded-full shadow-lg hover:scale-105 transition-transform z-50"
+        className="fixed inset-x-0 bottom-6 mx-auto w-fit bg-[#ffc107] text-black font-bold px-6 py-3 rounded-full shadow-lg z-50 animate-float-glow transition-all text-center"
       >
         {ctaText[lang]}
       </a>

@@ -16,7 +16,7 @@ const Footer = ({ lang }) => {
   };
 
   return (
-    <footer className="backdrop-blur-md bg-white/5 border-t border-white/10 text-gray-400 py-10 text-center text-sm px-4">
+    <footer className="backdrop-blur-md bg-white/5 border-t border-white/10 text-gray-400 py-10 pb-28 text-center text-sm px-4">
       <p className="mb-6">© 2025 MZ BETS. {t[lang]}</p>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm">

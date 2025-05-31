@@ -71,3 +71,53 @@
       0 0 40px #1db954;
   }
 }
+
+@keyframes glow-ring {
+  0% {
+    box-shadow: 0 0 0px #ffc107;
+    transform: rotate(0deg);
+  }
+  50% {
+    box-shadow: 0 0 20px #ffc107;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-glow-ring {
+  animation: glow-ring 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animate-shimmer {
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes float-glow {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 10px #ffc107;
+  }
+  50% {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px #ffc107;
+  }
+}
+.animate-float-glow {
+  animation: float-glow 3s ease-in-out infinite;
+}
