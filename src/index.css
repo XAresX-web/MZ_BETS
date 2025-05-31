@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/components/FlagCarousel.css */
+.fi {
+  display: inline-block;
+  width: 2rem;
+  height: 1.5rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+}
+
+.icon-flame {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-flame::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(29, 185, 84, 0.25) 0%,
+    transparent 70%
+  );
+  animation: flame 2s ease-in-out infinite;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+@keyframes flame {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+/* Neon effect for badge */
+.neon-glow {
+  border: 1px solid #1db954;
+  background-color: rgba(29, 185, 84, 0.1);
+  box-shadow: 0 0 5px #1db954, 0 0 10px #1db954, 0 0 15px #1db954,
+    0 0 20px #1db954;
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px #1db954, 0 0 10px #1db954, 0 0 15px #1db954,
+      0 0 20px #1db954;
+  }
+  50% {
+    box-shadow: 0 0 10px #1db954, 0 0 20px #1db954, 0 0 30px #1db954,
+      0 0 40px #1db954;
+  }
+}
