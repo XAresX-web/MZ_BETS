@@ -6,6 +6,7 @@ const languages = {
   es: { label: "ES", flag: "/flags/es.svg" },
   en: { label: "EN", flag: "/flags/en.svg" },
   pt: { label: "PT", flag: "/flags/pt.svg" },
+  cn: { label: "CN", flag: "/flags/cn.svg" },
 };
 
 export default function Header({ lang, setLang }) {

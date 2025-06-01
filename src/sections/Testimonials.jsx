@@ -1,21 +1,24 @@
 // src/sections/ChatTestimonials.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import es from "../locales/es.json";
-import en from "../locales/en.json";
-import pt from "../locales/pt.json";
-
-const translations = { es, en, pt };
-
 export default function ChatTestimonials({ lang }) {
-  const locale =
-    translations[lang]?.chatTestimonials || translations["es"].chatTestimonials;
-  const testimonials = locale.testimonials;
-  const title = locale.title;
+  const { t, i18n } = useTranslation();
+
+  // Cambia el idioma activamente con react-i18next
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang]);
+
+  // Accede a las traducciones desde i18next
+  const testimonials = t("chatTestimonials.testimonials", {
+    returnObjects: true,
+  });
+  const title = t("chatTestimonials.title");
 
   const groupSize = 3;
   const grouped = Array.from(

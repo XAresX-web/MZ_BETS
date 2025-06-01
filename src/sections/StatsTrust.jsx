@@ -8,8 +8,9 @@ import CountUp from "react-countup";
 import es from "../locales/es.json";
 import en from "../locales/en.json";
 import pt from "../locales/pt.json";
+import cn from "../locales/cn.json";
 
-const translations = { es, en, pt };
+const translations = { es, en, pt, cn };
 
 export default function StatsTrust({ lang }) {
   const t = translations[lang]?.stats || translations["es"].stats;
