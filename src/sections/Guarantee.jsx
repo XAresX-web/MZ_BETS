@@ -1,8 +1,11 @@
 import React from "react";
 import { ShieldCheck, Lock, Trophy, BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Guarantee() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 px-6 text-white text-center relative">
       <motion.div
@@ -12,19 +15,18 @@ export default function Guarantee() {
         className="mb-14"
       >
         <div className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1 rounded-full uppercase tracking-wider text-[#1db954] neon-glow">
-          Seguridad Garantizada
-          <BadgeCheck size={16} />
+          {t("guarantee.titleBadge")} <BadgeCheck size={16} />
         </div>
         <h2 className="text-4xl md:text-5xl font-extrabold mt-6">
-          Compra con confianza total
+          {t("guarantee.title")}
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto mt-4 text-lg md:text-xl">
-          Protegido por tecnología segura, garantía de resultados, y membresía
-          verificada.
+          {t("guarantee.subtitle")}
         </p>
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* 1. Garantía de resultados */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -35,16 +37,18 @@ export default function Guarantee() {
             size={48}
             className="mx-auto text-[#1db954] animate-pulse drop-shadow-[0_0_15px_#1db954]"
           />
-          <h3 className="text-xl font-bold mt-4">Garantía de Resultados</h3>
+          <h3 className="text-xl font-bold mt-4">
+            {t("guarantee.card1.title")}
+          </h3>
           <p className="text-gray-400 mt-2">
-            Si no mejoras tus apuestas en 7 días, puedes solicitar un reembolso
-            completo. Sin letras pequeñas.
+            {t("guarantee.card1.description")}
           </p>
           <div className="mt-4 text-xs uppercase text-[#1db954] font-bold tracking-widest">
-            Protección 7 días
+            {t("guarantee.card1.badge")}
           </div>
         </motion.div>
 
+        {/* 2. Pago seguro */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -55,17 +59,18 @@ export default function Guarantee() {
             size={48}
             className="mx-auto text-[#1db954] animate-pulse drop-shadow-[0_0_15px_#1db954]"
           />
-          <h3 className="text-xl font-bold mt-4">Pago 100% Seguro</h3>
+          <h3 className="text-xl font-bold mt-4">
+            {t("guarantee.card2.title")}
+          </h3>
           <p className="text-gray-400 mt-2">
-            Procesado por{" "}
-            <span className="text-white font-semibold">Stripe</span>, la
-            plataforma más segura del mundo. Cifrado SSL de nivel bancario.
+            {t("guarantee.card2.description")}
           </p>
           <div className="mt-4 text-xs uppercase text-[#1db954] font-bold tracking-widest">
-            Encriptación avanzada
+            {t("guarantee.card2.badge")}
           </div>
         </motion.div>
 
+        {/* 3. Resultados reales */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -76,13 +81,14 @@ export default function Guarantee() {
             size={48}
             className="mx-auto text-[#1db954] animate-pulse drop-shadow-[0_0_15px_#1db954]"
           />
-          <h3 className="text-xl font-bold mt-4">Resultados Reales</h3>
+          <h3 className="text-xl font-bold mt-4">
+            {t("guarantee.card3.title")}
+          </h3>
           <p className="text-gray-400 mt-2">
-            Nuestros usuarios VIP reportan una mejora significativa en sus
-            ganancias. Comprobado semanalmente.
+            {t("guarantee.card3.description")}
           </p>
           <div className="mt-4 text-xs uppercase text-[#1db954] font-bold tracking-widest">
-            Comprobado por MZ BETS
+            {t("guarantee.card3.badge")}
           </div>
         </motion.div>
       </div>

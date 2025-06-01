@@ -1,12 +1,9 @@
-// src/sections/Footer.jsx
 import React from "react";
 import { Instagram, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const Footer = ({ lang }) => {
-  const t = {
-    es: "Todos los derechos reservados",
-    en: "All rights reserved",
-  };
+const Footer = () => {
+  const { t } = useTranslation();
 
   const links = {
     instagram: "https://www.instagram.com/tu_cuenta", // 🔁 Reemplaza con tu enlace real
@@ -17,7 +14,7 @@ const Footer = ({ lang }) => {
 
   return (
     <footer className="backdrop-blur-md bg-white/5 border-t border-white/10 text-gray-400 py-10 pb-28 text-center text-sm px-4">
-      <p className="mb-6">© 2025 MZ BETS. {t[lang]}</p>
+      <p className="mb-6">© 2025 MZ BETS. {t("footer.rights")}</p>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm">
         {/* Redes sociales */}
@@ -46,13 +43,13 @@ const Footer = ({ lang }) => {
             href={links.terms}
             className="hover:text-[#00ff87] transition-colors"
           >
-            {lang === "es" ? "Términos y Condiciones" : "Terms & Conditions"}
+            {t("footer.terms")}
           </a>
           <a
             href={links.privacy}
             className="hover:text-[#00ff87] transition-colors"
           >
-            {lang === "es" ? "Política de Privacidad" : "Privacy Policy"}
+            {t("footer.privacy")}
           </a>
         </div>
       </div>

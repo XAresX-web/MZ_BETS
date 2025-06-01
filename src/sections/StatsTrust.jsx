@@ -4,57 +4,22 @@ import { motion } from "framer-motion";
 import { Users, ShieldCheck, Trophy } from "lucide-react";
 import CountUp from "react-countup";
 
-export default function StatsTrust({ lang }) {
-  const content = {
-    es: {
-      title: "¿Por qué confiar en MZ BETS?",
-      stats: [
-        {
-          icon: <Users size={28} />,
-          value: 350000,
-          suffix: "+",
-          label: "Clientes activos que confían diariamente",
-        },
-        {
-          icon: <Trophy size={28} />,
-          value: 93,
-          suffix: "%",
-          label: "Racha VIP de aciertos comprobados",
-        },
-        {
-          icon: <ShieldCheck size={28} />,
-          value: 15,
-          suffix: " años",
-          label: "Expertos en apuestas deportivas",
-        },
-      ],
-    },
-    en: {
-      title: "Why trust MZ BETS?",
-      stats: [
-        {
-          icon: <Users size={28} />,
-          value: 350000,
-          suffix: "+",
-          label: "Active clients who trust us daily",
-        },
-        {
-          icon: <Trophy size={28} />,
-          value: 93,
-          suffix: "%",
-          label: "Proven VIP winning streak",
-        },
-        {
-          icon: <ShieldCheck size={28} />,
-          value: 15,
-          suffix: " years",
-          label: "Experts in sports betting",
-        },
-      ],
-    },
-  };
+// Importar traducciones por idioma
+import es from "../locales/es.json";
+import en from "../locales/en.json";
+import pt from "../locales/pt.json";
 
-  const t = content[lang] || content.es;
+const translations = { es, en, pt };
+
+export default function StatsTrust({ lang }) {
+  const t = translations[lang]?.stats || translations["es"].stats;
+
+  const icons = [
+    <Users size={28} />,
+    <Trophy size={28} />,
+    <ShieldCheck size={28} />,
+  ];
+  const stats = [t.stat1, t.stat2, t.stat3];
 
   return (
     <section className="py-24 px-6 text-center bg-transparent">
@@ -69,7 +34,7 @@ export default function StatsTrust({ lang }) {
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {t.stats.map((stat, i) => (
+        {stats.map((stat, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -79,7 +44,7 @@ export default function StatsTrust({ lang }) {
             className="bg-gradient-to-br from-[#101010] to-[#1a1a1a] border border-white/10 rounded-xl p-8 text-center shadow-lg hover:shadow-2xl transition-all"
           >
             <div className="w-14 h-14 mx-auto flex items-center justify-center bg-[#1db954]/10 border border-[#1db954]/30 text-[#1db954] rounded-full mb-5">
-              {stat.icon}
+              {icons[i]}
             </div>
             <p className="text-4xl font-extrabold text-white drop-shadow-sm">
               <CountUp

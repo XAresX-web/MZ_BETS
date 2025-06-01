@@ -6,12 +6,8 @@ const LanguageContext = createContext();
 export const LanguageProvider = ({ children }) => {
   const [lang, setLang] = useState("es"); // Español por defecto
 
-  const changeLanguage = (newLang) => {
-    setLang(newLang);
-  };
-
   return (
-    <LanguageContext.Provider value={{ lang, changeLanguage }}>
+    <LanguageContext.Provider value={{ lang, setLang }}>
       {children}
     </LanguageContext.Provider>
   );

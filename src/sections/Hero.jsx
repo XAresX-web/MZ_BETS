@@ -1,22 +1,10 @@
 // src/sections/Hero.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
-export default function Hero({ lang }) {
-  const content = {
-    es: {
-      title: "ELIGE TU PLAN GANADOR",
-      subtitle: "Potencia tus apuestas deportivas con inteligencia",
-      button: "Ver Planes",
-    },
-    en: {
-      title: "CHOOSE YOUR WINNING PLAN",
-      subtitle: "Boost your sports betting with intelligence",
-      button: "See Plans",
-    },
-  };
-
-  const t = content[lang] || content.es;
+export default function Hero() {
+  const { t } = useTranslation();
 
   return (
     <section className="relative py-32 px-6 text-center">
@@ -32,7 +20,7 @@ export default function Hero({ lang }) {
           transition={{ duration: 1 }}
           className="text-4xl md:text-6xl font-extrabold text-white tracking-tight relative inline-block"
         >
-          <span className="relative z-10">{t.title}</span>
+          <span className="relative z-10">{t("hero.title")}</span>
           <span className="absolute inset-0 bg-gradient-to-r from-[#1db954] via-white to-[#1db954] blur-xl opacity-20 animate-pulse rounded" />
         </motion.h1>
 
@@ -42,7 +30,7 @@ export default function Hero({ lang }) {
           transition={{ duration: 1, delay: 0.3 }}
           className="mt-6 text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto"
         >
-          {t.subtitle}
+          {t("hero.subtitle")}
         </motion.p>
 
         <motion.a
@@ -62,7 +50,7 @@ export default function Hero({ lang }) {
           {/* Shimmer automático */}
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-70 animate-shimmer rounded-full z-0" />
 
-          <span className="relative z-10">{t.button}</span>
+          <span className="relative z-10">{t("hero.button")}</span>
         </motion.a>
       </div>
     </section>

@@ -1,0 +1,324 @@
+{
+  "promo": {
+    "start": "EXCLUSIVE DEAL: Get access to the",
+    "vip": "VIP PRO package",
+    "discount": "30% OFF",
+    "onlyToday": "🔥 Today only"
+  },
+  "cta": {
+    "vipAccess": "⚡ VIP Access"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "body": "MZ BETS collects minimal data such as emails and usage stats. We never share your personal information with third parties. We use cookies to enhance the user experience.",
+    "back": "Back to home"
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "body": "By accessing MZ BETS, you agree to abide by these terms. The services provided are for informational purposes. We do not guarantee results or take responsibility for decisions made based on our analysis.",
+    "back": "Back to home"
+  },
+  "benefits": {
+    "title": "Exclusive MZ BETS Benefits",
+    "items": [
+      {
+        "title": "Daily AI Predictions",
+        "desc": "Receive optimized betting picks daily powered by advanced AI."
+      },
+      {
+        "title": "Smart Telegram Bot",
+        "desc": "Get instant smart alerts when high-value bets are detected."
+      },
+      {
+        "title": "Access to VIP Groups",
+        "desc": "Join an exclusive group of elite bettors with 24/7 professional support."
+      },
+      {
+        "title": "Value & Streak Analysis",
+        "desc": "Track your winning streaks and analyze when you have the edge."
+      },
+      {
+        "title": "Custom Support",
+        "desc": "Our team helps you step-by-step to maximize your profits."
+      },
+      {
+        "title": "Premium Stats Panel",
+        "desc": "Check detailed charts, ROI, winrates and previous picks anytime."
+      }
+    ]
+  },
+  "bonus": {
+    "headline": "Get over $347 USD in free bonuses when you activate your plan!",
+    "note": "🔒 Bonuses available only with active payment. Immediate access after confirmation.",
+    "items": [
+      {
+        "title": "PRO Sports Betting Course",
+        "description": "Learn bankroll strategy, value bets, and emotional control to truly win.",
+        "value": "$149 USD"
+      },
+      {
+        "title": "Access to secret channel with extra picks",
+        "description": "Receive additional exclusive picks for members with active bonuses.",
+        "value": "$97 USD"
+      },
+      {
+        "title": "Advanced ebook + bankroll template",
+        "description": "Manage your bankroll like a pro with this editable template + tactical ebook.",
+        "value": "$101 USD"
+      }
+    ]
+  },
+  "comingSoon": {
+    "title": "🚧 COMING SOON: INTELLIGENT CONTROL PANEL",
+    "description1": "You’ll have access to a custom control panel where you can monitor, manage, and control all your bets in real-time from anywhere, anytime.",
+    "description2": "Powered by artificial intelligence and world-class technologies, this will be the most powerful system ever created for true sports betting lovers.",
+    "footer": "🔒 Exclusive for MZ BETS clients.",
+    "wait": "Stay tuned!"
+  },
+  "countdown": {
+    "title": "⚡ NEXT VIP PICK IN:",
+    "subtitle": "Only active members receive the next VIP pick, AI alerts every 5 minutes, real-time advice, and win thousands in minutes. Stay ready."
+  },
+  "faq": {
+    "title": "❓ Frequently Asked Questions",
+    "list": [
+      {
+        "q": "What do I get when I activate a plan?",
+        "a": "You instantly gain access to our private channel with daily tips, advanced analysis, VIP community, and over $347 USD in exclusive bonuses. Each plan includes scalable benefits (Basic, Pro, or Elite)."
+      },
+      {
+        "q": "How are the tips and signals delivered?",
+        "a": "You’ll receive the signals in a private channel and later in your personalized dashboard (once active). We send them in real time, with clear instructions and recommended odds and stake."
+      },
+      {
+        "q": "Is it a one-time payment or monthly subscription?",
+        "a": "It’s a monthly, quarterly, or annual subscription. You can cancel anytime from your dashboard. No contracts or fine print. Full control for you."
+      },
+      {
+        "q": "Can I trust you? Is it safe?",
+        "a": "Absolutely. We use Stripe as our secure payment gateway and have hundreds of satisfied active users. We do not store your personal or banking data."
+      },
+      {
+        "q": "What if I don’t make money?",
+        "a": "Results may vary. Our team constantly studies the market, but we can’t guarantee profits. However, we provide real tools and education to help you improve."
+      },
+      {
+        "q": "How do I get the free bonuses?",
+        "a": "Bonuses are activated automatically after payment. You’ll access premium courses, ebooks, tools, and secret channels without paying extra."
+      }
+    ],
+    "support": "Telegram Support"
+  },
+  "flags": {
+    "text": "The best analysts in the world work for you 24/7"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy"
+  },
+  "guarantee": {
+    "titleBadge": "Guaranteed Security",
+    "title": "Buy with total confidence",
+    "subtitle": "Protected by secure technology, guaranteed results, and verified membership.",
+    "card1": {
+      "title": "Results Guarantee",
+      "description": "If your bets don’t improve in 7 days, you can request a full refund. No fine print.",
+      "badge": "7-Day Protection"
+    },
+    "card2": {
+      "title": "100% Secure Payment",
+      "description": "Processed by Stripe, the most secure platform in the world. Bank-level SSL encryption.",
+      "badge": "Advanced Encryption"
+    },
+    "card3": {
+      "title": "Real Results",
+      "description": "Our VIP users report a significant improvement in profits. Verified weekly.",
+      "badge": "Verified by MZ BETS"
+    }
+  },
+  "hero": {
+    "title": "CHOOSE YOUR WINNING PLAN",
+    "subtitle": "Boost your sports betting with intelligence",
+    "button": "See Plans"
+  },
+  "live": {
+    "juanElite": "Juan from Mexico City just activated the Elite Plan",
+    "viewersNow": "589 people are viewing this page right now",
+    "anaWon": "Ana from Monterrey won $11,240 yesterday with our signals",
+    "pedroPro": "Pedro activated the Pro Plan 3 minutes ago",
+    "carlosBonus": "Carlos received an exclusive bonus for activating the Basic Plan",
+    "alanVIP": "Alan from Guadalajara just activated his VIP account",
+    "usersBought": "53 users have purchased a plan on MZ BETS today"
+  },
+  "stats": {
+    "title": "Why trust MZ BETS?",
+    "stat1": {
+      "value": 350000,
+      "suffix": "+",
+      "label": "Active clients who trust us daily"
+    },
+    "stat2": {
+      "value": 93,
+      "suffix": "%",
+      "label": "Proven VIP winning streak"
+    },
+    "stat3": {
+      "value": 15,
+      "suffix": " years",
+      "label": "Experts in sports betting"
+    }
+  },
+  "freeCTA": {
+    "title": "Not ready to join yet?",
+    "subtitle": "Join our free Telegram channel and get daily tips, high-accuracy alerts, and our basic betting course. Only today!",
+    "button": "Join free channel"
+  },
+  "chatTestimonials": {
+    "title": "Real User Messages",
+    "testimonials": [
+      {
+        "msg": "Man, this bot is no joke. 5 wins in a row last week. I’m finally making consistent money 🤑📈",
+        "time": "11:04 AM"
+      },
+      {
+        "msg": "Was skeptical at first, but MZ BETS is the real deal. Feels like having a pro coach.",
+        "time": "03:17 PM"
+      },
+      {
+        "msg": "The streak analyzer is a gem. Helped me stop betting emotionally and stick to logic 🔍📉",
+        "time": "04:29 PM"
+      },
+      {
+        "msg": "Paid my entire semester tuition with just one week of wins. Forever loyal 💚",
+        "time": "07:45 PM"
+      },
+      {
+        "msg": "Even as a total beginner, I’m profiting. This community is gold.",
+        "time": "01:22 PM"
+      },
+      {
+        "msg": "Bro, it’s like a cheat code for betting. Stats + alerts = profit 📲🧠",
+        "time": "10:21 AM"
+      },
+      {
+        "msg": "I’ve tried dozens of betting groups. This is the only one that actually works.",
+        "time": "05:11 PM"
+      },
+      {
+        "msg": "Just got my 4th green in a row. MZ BETS is different 🟢🟢🟢🟢",
+        "time": "02:38 PM"
+      },
+      {
+        "msg": "Love the Telegram style delivery. Fast, clean, and profitable.",
+        "time": "06:50 PM"
+      },
+      {
+        "msg": "I no longer chase losses. MZ taught me patience and value 💡📊",
+        "time": "08:27 AM"
+      },
+      {
+        "msg": "This feels like insider info, but it’s just smart data. Impressed.",
+        "time": "01:33 PM"
+      },
+      {
+        "msg": "From broke to back on track. MZ saved my betting life.",
+        "time": "11:50 AM"
+      }
+    ]
+  },
+  "plansTable": {
+    "title": "What’s included in each plan?",
+    "subtitle": "Compare the plans and choose your edge.",
+    "columns": ["Feature", "Free", "Basic", "Pro", "Elite"],
+    "features": [
+      {
+        "label": "Daily tips",
+        "free": "Limited",
+        "basic": true,
+        "pro": true,
+        "elite": true
+      },
+      {
+        "label": "Daily alerts",
+        "free": "Limited",
+        "basic": true,
+        "pro": true,
+        "elite": true
+      },
+      {
+        "label": "Exclusive AI analysis",
+        "free": false,
+        "basic": false,
+        "pro": true,
+        "elite": true
+      },
+      {
+        "label": "Advanced bot",
+        "free": false,
+        "basic": false,
+        "pro": true,
+        "elite": true
+      },
+      {
+        "label": "Custom picks",
+        "free": false,
+        "basic": false,
+        "pro": false,
+        "elite": true
+      },
+      {
+        "label": "Private VIP channel",
+        "free": false,
+        "basic": true,
+        "pro": true,
+        "elite": true
+      },
+      {
+        "label": "Verified results",
+        "free": false,
+        "basic": false,
+        "pro": true,
+        "elite": true
+      },
+      {
+        "label": "Weekly consultations",
+        "free": false,
+        "basic": "Limited",
+        "pro": "Limited",
+        "elite": true
+      },
+      {
+        "label": "Community access",
+        "free": true,
+        "basic": true,
+        "pro": true,
+        "elite": true
+      },
+      {
+        "label": "Top-level support",
+        "free": false,
+        "basic": "Limited",
+        "pro": true,
+        "elite": true
+      }
+    ]
+  },
+  "plans": {
+    "title": "Choose your winning plan",
+    "subtitle": "Choose your plan and start winning today. The best moment was yesterday. The second best is now.",
+    "buy": "Buy now",
+    "periods": {
+      "mensual": "Monthly",
+      "trimestral": "Quarterly -15%",
+      "anual": "Annual -30%"
+    },
+    "labels": {
+      "plan0": "For getting started",
+      "plan1": "Boost your success",
+      "plan2": "Ultimate performance",
+      "popular": "Most popular",
+      "footnote": "Instant access · Cancel anytime"
+    }
+  }
+}

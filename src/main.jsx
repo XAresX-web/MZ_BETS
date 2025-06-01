@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import "./i18n"; // 👈 Importa el sistema de traducción
 import "./index.css";
 import { ThemeProvider } from "./components/ThemeProvider.jsx";
 import { LanguageProvider } from "./context/LanguageContext.jsx";

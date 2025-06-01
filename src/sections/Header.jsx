@@ -1,8 +1,7 @@
-// src/components/Header.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { Globe } from "lucide-react";
+import i18n from "../i18n"; // Asegúrate de que la ruta sea correcta
 
-// Ruta a las banderas en public/
 const languages = {
   es: { label: "ES", flag: "/flags/es.svg" },
   en: { label: "EN", flag: "/flags/en.svg" },
@@ -55,7 +54,8 @@ export default function Header({ lang, setLang }) {
               <button
                 key={code}
                 onClick={() => {
-                  setLang(code);
+                  setLang(code); // Actualiza el estado de idioma
+                  i18n.changeLanguage(code); // <-- ¡Cambia el idioma global!
                   setOpen(false);
                 }}
                 className={`flex items-center gap-2 w-full px-2 py-2 text-sm text-white hover:bg-white/10 ${
