@@ -1,32 +1,80 @@
 // src/pages/GraciasBasico.jsx
-import React from "react";
-import { CheckCircle } from "lucide-react";
+import React, { useEffect } from "react";
+import confetti from "canvas-confetti";
+import { ArrowRight } from "lucide-react";
 
 export default function GraciasBasico() {
+  useEffect(() => {
+    const duration = 3000;
+    const end = Date.now() + duration;
+
+    const interval = setInterval(() => {
+      if (Date.now() > end) {
+        clearInterval(interval);
+        return;
+      }
+
+      confetti({
+        particleCount: 2,
+        spread: 70,
+        origin: { x: Math.random(), y: Math.random() - 0.2 },
+        colors: ["#ffc107", "#ffffff"],
+      });
+    }, 150);
+  }, []);
+
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center bg-black text-white px-6 text-center">
-      <CheckCircle size={48} className="text-[#ffc107] mb-6" />
-      <h1 className="text-4xl font-extrabold mb-4">
-        ¡Gracias por adquirir el Plan Básico!
-      </h1>
-      <p className="text-lg text-gray-300 max-w-xl mb-8">
-        Tu compra se ha procesado correctamente. Este plan no incluye acceso
-        VIP, pero muy pronto recibirás tips exclusivos directo en tu correo.
-      </p>
+    <div className="relative min-h-screen bg-black text-white flex flex-col justify-center items-center px-6 overflow-hidden">
+      <div className="emoji-rain absolute inset-0 z-0 pointer-events-none">
+        {Array.from({ length: 40 }).map((_, i) => (
+          <div
+            key={i}
+            className="emoji-drop"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 3}s`,
+            }}
+          >
+            💵
+          </div>
+        ))}
+      </div>
 
-      <a
-        href="https://forms.gle/TU_ENLACE_BASICO"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-[#ffc107] text-black font-bold py-3 px-8 rounded-full hover:brightness-110 transition"
-      >
-        Confirmar mi acceso
-      </a>
+      <div className="z-10 text-center max-w-xl">
+        <h1 className="text-4xl font-extrabold mb-6 text-[#ffc107]">
+          ¡Gracias por tu compra BÁSICO!
+        </h1>
+        <p className="text-gray-300 mb-8 text-lg">
+          Tu suscripción se activó con éxito. Valida tu acceso completando este
+          breve formulario.
+        </p>
 
-      <p className="text-xs text-white/40 mt-12 max-w-sm">
-        * Revisión manual en menos de 24h. Revisa tu correo para nuevos
-        beneficios cada día.
-      </p>
-    </section>
+        <a
+          href="https://forms.gle/5gAV79UpivwAvXL87"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[#ffc107] text-black font-bold px-6 py-3 rounded-full hover:scale-105 transition-all"
+        >
+          Confirmar acceso <ArrowRight size={18} />
+        </a>
+      </div>
+
+      <style>{`
+        .emoji-drop {
+          position: absolute;
+          top: -2rem;
+          font-size: 1.5rem;
+          animation-name: fall;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        @keyframes fall {
+          to {
+            transform: translateY(110vh);
+          }
+        }
+      `}</style>
+    </div>
   );
 }

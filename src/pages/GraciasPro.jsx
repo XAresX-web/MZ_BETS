@@ -1,36 +1,40 @@
 // src/pages/GraciasPro.jsx
 import React from "react";
-import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export default function GraciasPro() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center bg-black text-white px-6 text-center">
-      <CheckCircle size={48} className="text-[#1db954] mb-6" />
-      <h1 className="text-4xl font-extrabold mb-4">
-        ¡Bienvenido al Plan PRO de MZ BETS!
-      </h1>
-      <p className="text-lg text-gray-300 max-w-xl mb-8">
-        Tu pago fue exitoso. Para proteger nuestra comunidad, el acceso VIP se
-        gestiona con validación manual.
-      </p>
-      <p className="text-sm text-gray-400 max-w-xl mb-8">
-        Completa el siguiente formulario con tus datos y te daremos acceso al
-        canal exclusivo PRO.
-      </p>
+    <div className="relative flex flex-col justify-center items-center min-h-screen bg-black overflow-hidden text-white px-6">
+      {/* Fondo de dólares animados */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="w-full h-full bg-[url('/dolares.gif')] bg-cover bg-center opacity-10 animate-pulse" />
+      </div>
 
-      <a
-        href="https://forms.gle/TU_ENLACE_PRO"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-[#ffc107] text-black font-bold py-3 px-8 rounded-full hover:brightness-110 transition"
+      {/* Contenido principal */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 max-w-2xl text-center"
       >
-        Solicitar acceso VIP PRO
-      </a>
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#ffc107] drop-shadow-xl">
+          ¡Gracias por tu compra PRO!
+        </h1>
+        <p className="text-gray-300 mb-8 text-lg">
+          Tu acceso está casi listo. Haz clic en el botón de abajo para
+          completar tu activación exclusiva.
+        </p>
 
-      <p className="text-xs text-white/40 mt-12 max-w-sm">
-        * Validación en menos de 24h. Recibirás tu enlace exclusivo por correo o
-        Telegram.
-      </p>
-    </section>
+        <a
+          href="https://forms.gle/5gAV79UpivwAvXL87"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[#1db954] text-white font-bold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-all"
+        >
+          Acceder a mis beneficios <ArrowRight size={18} />
+        </a>
+      </motion.div>
+    </div>
   );
 }
