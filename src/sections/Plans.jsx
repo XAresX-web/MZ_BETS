@@ -3,6 +3,11 @@ import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import plansData from "../data/plansData";
+import stripePriceTable from "../data/stripePriceTable";
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe(
+  "pk_live_51RV5boLn2X7paUwsm5WgzuSYZf8P954wMs8jBpBPXjxM4586p6VV03MSk6atvXMMHMNcQNLWBMYRLjHrBFHFO9Av00Wmof0unN"
+); // tu clave pública real
 
 export default function Plans() {
   const [mode, setMode] = useState("mensual");
@@ -10,6 +15,23 @@ export default function Plans() {
   const lang = i18n.language;
 
   const data = plansData[lang] || plansData.es;
+
+  const handleCheckout = async (planIndex) => {
+    const stripe = await stripePromise;
+    const priceId = stripePriceTable[mode][planIndex];
+
+    if (!priceId) {
+      alert("Error al seleccionar el plan.");
+      return;
+    }
+
+    await stripe.redirectToCheckout({
+      lineItems: [{ price: priceId, quantity: 1 }],
+      mode: "subscription",
+      successUrl: `${window.location.origin}/gracias`,
+      cancelUrl: `${window.location.origin}/planes`,
+    });
+  };
 
   return (
     <section id="planes" className="py-24 px-6 text-center">
@@ -106,12 +128,12 @@ export default function Plans() {
                 ))}
               </ul>
 
-              <a
-                href={plan.link}
+              <button
+                onClick={() => handleCheckout(index)}
                 className="inline-flex items-center justify-center gap-2 bg-[#ffc107] text-black font-bold py-2 px-6 rounded-full hover:brightness-110 transition-all"
               >
                 {t("plans.buy")} <ArrowRight size={16} />
-              </a>
+              </button>
 
               <p className="text-xs text-white/50 mt-2">
                 🚀 {t("plans.labels.footnote")}
