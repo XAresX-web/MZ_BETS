@@ -25,10 +25,12 @@ export default function Benefits() {
 
   return (
     <section className="py-24 px-4 md:px-10">
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-white relative inline-block">
-        <span className="relative z-10">{t("benefits.title")}</span>
-        <span className="absolute inset-0 bg-gradient-to-r from-[#1db954] to-[#1db954] blur-xl opacity-10 rounded" />
-      </h2>
+      <div className="w-full text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-white relative inline-block">
+          <span className="relative z-10">{t("benefits.title")}</span>
+          <span className="absolute inset-0 bg-gradient-to-r from-[#1db954] to-[#1db954] blur-xl opacity-10 rounded" />
+        </h2>
+      </div>
 
       <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto text-left">
         {benefits.map((b, i) => (
