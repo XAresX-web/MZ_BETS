@@ -27,6 +27,7 @@ export default function App() {
       <BackgroundSwitcher fondoInicial="particulas">
         <Router>
           <Routes>
+            <Route path="*" element={<MZBetsLanding lang={lang} />} />
             <Route path="/" element={<MZBetsLanding lang={lang} />} />
             <Route path="/terminos" element={<Terminos lang={lang} />} />
             <Route

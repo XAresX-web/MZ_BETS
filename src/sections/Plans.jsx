@@ -29,7 +29,7 @@ export default function Plans() {
       lineItems: [{ price: priceId, quantity: 1 }],
       mode: "subscription",
       successUrl: `${window.location.origin}/gracias`,
-      cancelUrl: `${window.location.origin}/planes`,
+      cancelUrl: `${window.location.origin}#planes`,
     });
   };
 

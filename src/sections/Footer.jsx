@@ -6,7 +6,8 @@ const Footer = () => {
   const { t } = useTranslation();
 
   const links = {
-    instagram: "https://www.instagram.com/tu_cuenta", // 🔁 Reemplaza con tu enlace real
+    instagram:
+      "https://www.instagram.com/mz_bets_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", // 🔁 Reemplaza con tu enlace real
     telegram: "https://t.me/tu_canal", // 🔁 Reemplaza con tu enlace real
     terms: "/terminos",
     privacy: "/privacidad",
