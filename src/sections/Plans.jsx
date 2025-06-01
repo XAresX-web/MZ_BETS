@@ -389,6 +389,8 @@ export default function Plans({ lang }) {
   const t = {
     es: {
       title: "Elige tu plan ganador",
+      subtitle:
+        "Elige tu plan y empieza a ganar hoy. El mejor momento fue ayer. El segundo mejor momento es ahora.",
       buy: "Comprar",
       mensual: "Mensual",
       trimestral: "Trimestral -15%",
@@ -405,6 +407,7 @@ export default function Plans({ lang }) {
 
   return (
     <section id="planes" className="py-24 px-6 text-center">
+      {/* Título */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -415,7 +418,24 @@ export default function Plans({ lang }) {
         <span className="absolute inset-0 bg-gradient-to-r from-[#1db954] to-[#ffc107] blur-xl opacity-10 rounded" />
       </motion.h2>
 
-      <div className="flex justify-center gap-4 mb-12 flex-wrap">
+      {/* Subtítulo */}
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        className="text-gray-400 text-center mt-2 max-w-xl mx-auto leading-relaxed text-lg"
+      >
+        Elige tu plan y empieza a{" "}
+        <span className="text-[#ffc107] font-semibold">ganar</span> hoy.
+        <br />
+        <span className="text-[#ffc107] font-semibold">
+          El mejor momento fue ayer. El segundo mejor momento es{" "}
+          <span className="underline underline-offset-4">ahora</span>.
+        </span>
+      </motion.p>
+
+      {/* Botones de modalidad */}
+      <div className="flex justify-center gap-4 mb-12 mt-8 flex-wrap">
         {["mensual", "trimestral", "anual"].map((planKey) => (
           <button
             key={planKey}
@@ -431,6 +451,7 @@ export default function Plans({ lang }) {
         ))}
       </div>
 
+      {/* Tarjetas de planes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {plansData[lang][mode].map((plan, index) => {
           const isPopular = index === 1;
@@ -449,16 +470,18 @@ export default function Plans({ lang }) {
               }`}
             >
               {isPopular && (
-                <div className="absolute inset-0 rounded-2xl bg-[#33ff77]/20 blur-2xl animate-glow -z-10" />
+                <>
+                  <div className="absolute inset-0 rounded-2xl bg-[#33ff77]/20 blur-2xl animate-glow -z-10" />
+                  <span className="absolute top-4 right-4 text-xs font-bold uppercase px-3 py-1 rounded-full bg-[#ffc107]/90 text-black tracking-wider shadow-lg ring-2 ring-[#ffc107]/50 backdrop-blur-md animate-glow-popular">
+                    {lang === "es" ? "Más popular" : "Most popular"}
+                  </span>
+                </>
               )}
-              {isPopular && (
-                <span className="flame-tag bg-[#ffc107]/90 text-black text-xs font-bold px-2 py-1 rounded-full uppercase shadow-md backdrop-blur-sm glassmorphism absolute top-4 right-4">
-                  {lang === "es" ? "Más popular" : "Most popular"}
-                </span>
-              )}
+
               <h3 className="text-2xl font-extrabold text-white mb-3 tracking-wide">
                 {plan.title}
               </h3>
+
               <p className="text-4xl font-black text-[#1db954] mb-1 flex justify-center items-baseline gap-1">
                 {plan.price}
                 {plan.currency && (
@@ -467,11 +490,13 @@ export default function Plans({ lang }) {
                   </span>
                 )}
               </p>
+
               {plan.originalPrice && (
                 <p className="text-xs text-white/50 line-through mb-1">
                   {plan.originalPrice}
                 </p>
               )}
+
               <p className="text-sm text-white/70 mb-4 italic">
                 {index === 0
                   ? lang === "es"
@@ -485,6 +510,7 @@ export default function Plans({ lang }) {
                   ? "Máximo rendimiento garantizado"
                   : "Ultimate performance"}
               </p>
+
               <ul className="text-left text-gray-300 mb-8 space-y-3 text-sm">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex gap-2 items-start">
@@ -493,12 +519,14 @@ export default function Plans({ lang }) {
                   </li>
                 ))}
               </ul>
+
               <a
                 href={plan.link}
                 className="inline-flex items-center justify-center gap-2 bg-[#ffc107] text-black font-bold py-2 px-6 rounded-full hover:brightness-110 transition-all"
               >
                 {t[lang].buy} <ArrowRight size={16} />
               </a>
+
               <p className="text-xs text-white/50 mt-2">
                 🚀{" "}
                 {lang === "es"

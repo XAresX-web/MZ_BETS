@@ -13,15 +13,16 @@ import Guarantee from "../sections/Guarantee";
 import PlansComparison from "../sections/PlansComparison";
 import Countdown from "../sections/Countdown";
 import TelegramInvite from "../sections/TelegramInvite";
+import BonusSection from "../sections/BonusSection";
+import LiveActivity from "../sections/LiveActivity";
+import PromoBanner from "../components/PromoBanner";
+import CasinosCarousel from "../sections/CasinosCarousel";
+import ComingSoonNotice from "../sections/ComingSoonNotice";
+import FaqSection from "../sections/FaqSection";
 
 export default function MZBetsLanding() {
   const [lang, setLang] = useState("es");
   const { theme, setTheme } = useTheme();
-
-  const promoContent = {
-    es: "🎁 PROMO EXCLUSIVA: Accede al paquete VIP PRO con 30% OFF solo por hoy 🔥",
-    en: "🎁 EXCLUSIVE PROMO: Get 30% OFF VIP PRO access today only 🔥",
-  };
 
   const ctaText = {
     es: "⚡ Acceso VIP",
@@ -33,20 +34,26 @@ export default function MZBetsLanding() {
       <Header lang={lang} setLang={setLang} />
 
       {/* 🎯 Cintillo Promocional */}
-      <div className="w-full py-2 px-4 bg-[#1db954] text-black text-sm font-semibold text-center animate-pulse z-50">
-        {promoContent[lang]}
+      <div className="w-full py-1 px-0 text-black text-sm font-semibold text-justify animate-pulse z-50 bg-gradient-to-r from-[#0e3e2f] via-[#1db954] to-[#145f3d]">
+        {/* 🎯 Cintillo Promocional */}
+        <PromoBanner lang={lang} />
       </div>
 
       <Hero lang={lang} />
+      <CasinosCarousel />
       <StatsTrust lang={lang} />
       <Benefits lang={lang} />
+      <ComingSoonNotice />
       <Plans lang={lang} />
       <TelegramInvite lang="es" link="https://t.me/tucanal" />
+      <LiveActivity />
       <PlansComparison />
       <Testimonials lang={lang} />
       <Guarantee />
+      <BonusSection />
       <Countdown lang="es" minutes={15} />
       <FlagsCarousel />
+      <FaqSection />
       <Footer lang={lang} />
 
       {/* CTA flotante fijo */}

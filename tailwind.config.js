@@ -28,12 +28,22 @@ module.exports = {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        pulseSlow: {
+          "0%, 100%": { opacity: "0.6", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.02)" },
+        },
+        fadeSlideUp: {
+          "0%": { opacity: 0, transform: "translateY(40px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
       },
       animation: {
         glow: "glow 4s ease-in-out infinite",
         flamePulse: "flamePulse 1.4s infinite linear",
         "spin-y": "spinY 6s linear infinite",
         slide: "slide 25s linear infinite",
+        pulseSlow: "pulseSlow 5s ease-in-out infinite",
+        fadeSlideUp: "fadeSlideUp 1s ease-out forwards",
       },
       backdropBlur: {
         xs: "2px",
@@ -61,6 +71,14 @@ module.exports = {
         ".neon-border": {
           border: "2px solid #39ff14",
           boxShadow: "0 0 8px #39ff14, 0 0 16px #39ff14",
+        },
+        ".shadow-dopa": {
+          boxShadow:
+            "0 0 25px rgba(57, 255, 20, 0.3), 0 0 10px rgba(57, 255, 20, 0.2)",
+        },
+        ".text-neon": {
+          color: "#39ff14",
+          textShadow: "0 0 5px #39ff14, 0 0 10px #39ff14",
         },
       });
 
