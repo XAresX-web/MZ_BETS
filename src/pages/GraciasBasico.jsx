@@ -1,7 +1,6 @@
-// src/pages/GraciasBasico.jsx
 import React, { useEffect } from "react";
 import confetti from "canvas-confetti";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function GraciasBasico() {
   useEffect(() => {
@@ -24,8 +23,8 @@ export default function GraciasBasico() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col justify-center items-center px-6 overflow-hidden">
-      {/* Emoji lluvia y piso */}
+    <section className="relative min-h-screen flex flex-col justify-center items-center bg-black text-white px-6 text-center overflow-hidden">
+      {/* Animación de billetes 💵 */}
       <div className="emoji-rain absolute inset-0 z-0 pointer-events-none">
         {Array.from({ length: 50 }).map((_, i) => (
           <div
@@ -42,63 +41,52 @@ export default function GraciasBasico() {
         ))}
       </div>
 
-      {/* Piso de billetes acumulados */}
-      <div className="absolute bottom-0 left-0 w-full flex flex-wrap justify-center items-end gap-1 px-4 py-3 z-0">
-        {Array.from({ length: 30 }).map((_, i) => (
-          <div
-            key={i}
-            className="text-xl sm:text-2xl md:text-3xl"
-            style={{
-              animation: `fadeIn 1s ease ${i * 0.1}s forwards`,
-              opacity: 0,
-            }}
-          >
-            💵
-          </div>
-        ))}
-      </div>
+      {/* Contenido principal */}
+      <CheckCircle size={48} className="text-[#ffc107] mb-6 z-10" />
+      <h1 className="text-4xl font-extrabold mb-4 z-10">
+        ¡Eres parte del Plan BÁSICO de MZ BETS!
+      </h1>
+      <p className="text-lg text-gray-300 max-w-xl mb-4 z-10">
+        Tu membresía ha sido activada correctamente. Recibirás tips diarios y
+        acceso exclusivo.
+      </p>
+      <p className="text-sm text-gray-400 max-w-xl mb-8 z-10">
+        Para validar tu membresía y darte acceso al contenido, por favor
+        completa el siguiente formulario.
+      </p>
 
-      {/* Contenido */}
-      <div className="z-10 text-center max-w-xl">
-        <h1 className="text-4xl font-extrabold mb-6 text-[#ffc107]">
-          ¡Gracias por tu compra BÁSICO!
-        </h1>
-        <p className="text-gray-300 mb-8 text-lg">
-          Tu suscripción se activó con éxito. Valida tu acceso completando este
-          breve formulario.
-        </p>
+      <a
+        href="https://forms.gle/zbfyqGpRPxRv8vbd7"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 bg-[#ffc107] text-black font-bold py-3 px-8 rounded-full hover:scale-105 transition z-10"
+      >
+        Solicitar acceso BÁSICO <ArrowRight size={18} />
+      </a>
 
-        <a
-          href="https://forms.gle/5gAV79UpivwAvXL87"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#ffc107] text-black font-bold px-6 py-3 rounded-full hover:scale-105 transition-all"
-        >
-          Confirmar acceso <ArrowRight size={18} />
-        </a>
-      </div>
+      <p className="text-xs text-white/40 mt-12 max-w-sm z-10">
+        * Nuestro equipo revisará tu formulario. Bienvenido al equipo de
+        ganadores.
+      </p>
 
-      {/* Estilos */}
+      {/* Estilos para animación */}
       <style>{`
         .emoji-drop {
           position: absolute;
-          top: -2rem;
+          top: -100px;
           font-size: 1.8rem;
+          opacity: 0;
           animation-name: fallOnce;
           animation-timing-function: ease-in;
           animation-fill-mode: forwards;
         }
 
         @keyframes fallOnce {
-          0% { transform: translateY(0); opacity: 1; }
-          100% { transform: translateY(90vh); opacity: 1; }
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
+          0% { transform: translateY(0); opacity: 0; }
+          10% { opacity: 1; }
+          100% { transform: translateY(100vh); opacity: 0; }
         }
       `}</style>
-    </div>
+    </section>
   );
 }

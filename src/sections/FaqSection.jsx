@@ -84,7 +84,7 @@ export default function FaqSection() {
         {/* Botón de soporte */}
         <div className="mt-10 flex justify-center">
           <a
-            href="https://t.me/TU_USUARIO"
+            href="https://t.me/soporte_mzbets"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#229ED9] hover:bg-[#1b88be] text-white font-semibold shadow-lg transition-all duration-300 animate-pulseSlow"

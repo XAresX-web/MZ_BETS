@@ -3,15 +3,30 @@ import { Instagram, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language || "es";
 
   const links = {
     instagram:
-      "https://www.instagram.com/mz_bets_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", // 🔁 Reemplaza con tu enlace real
-    telegram: "https://t.me/tu_canal", // 🔁 Reemplaza con tu enlace real
-    terms: "/terminos",
-    privacy: "/privacidad",
+      "https://www.instagram.com/mz_bets_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    telegram: "https://t.me/tu_canal",
+
+    // PDFs por idioma
+    terms: {
+      es: "/docs/terms-es.pdf",
+      en: "/docs/terms-en.pdf",
+      pt: "/docs/terms-pt.pdf",
+      cn: "/docs/terms-cn.pdf",
+    },
+    privacy: {
+      es: "/docs/privacy-es.pdf",
+      en: "/docs/privacy-en.pdf",
+      pt: "/docs/privacy-pt.pdf",
+      cn: "/docs/privacy-cn.pdf",
+    },
   };
+
+  const selectedLang = links.terms[lang] ? lang : "es";
 
   return (
     <footer className="backdrop-blur-md bg-white/5 border-t border-white/10 text-gray-400 py-10 pb-28 text-center text-sm px-4">
@@ -41,13 +56,17 @@ const Footer = () => {
         {/* Enlaces legales */}
         <div className="flex gap-6">
           <a
-            href={links.terms}
+            href={links.terms[selectedLang]}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-[#00ff87] transition-colors"
           >
             {t("footer.terms")}
           </a>
           <a
-            href={links.privacy}
+            href={links.privacy[selectedLang]}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-[#00ff87] transition-colors"
           >
             {t("footer.privacy")}
