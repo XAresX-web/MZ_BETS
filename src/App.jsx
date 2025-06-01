@@ -6,6 +6,9 @@ import MZBetsLanding from "./pages/MZBetsLanding";
 import Terminos from "./pages/Terminos";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import { useLanguage } from "./context/LanguageContext";
+import GraciasBasico from "./pages/GraciasBasico";
+import GraciasPro from "./pages/GraciasPro";
+import GraciasElite from "./pages/GraciasElite";
 
 export default function App() {
   const { lang } = useLanguage();
@@ -27,6 +30,9 @@ export default function App() {
       <BackgroundSwitcher fondoInicial="particulas">
         <Router>
           <Routes>
+            <Route path="/gracias/basico" element={<GraciasBasico />} />
+            <Route path="/gracias/pro" element={<GraciasPro />} />
+            <Route path="/gracias/elite" element={<GraciasElite />} />
             <Route path="*" element={<MZBetsLanding lang={lang} />} />
             <Route path="/" element={<MZBetsLanding lang={lang} />} />
             <Route path="/terminos" element={<Terminos lang={lang} />} />

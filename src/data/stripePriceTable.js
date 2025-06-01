@@ -6,13 +6,13 @@ const stripePriceTable = {
   },
   trimestral: {
     0: "price_1RV6EKLn2X7paUwsGqNwxjy5", // Básico Trimestral
-    1: "price_1RV6KeLn2X7paUwspxLi1Dq6", // Pro Trimestral
-    2: "price_1RV6NkLn2X7paUwsTTgVtJRA", // Élite Trimestral
+    1: "price_1RV6KeLn2X7paUws14xsh3zq", // Pro Trimestral
+    2: "price_1RV6NkLn2X7paUwshSwf7N2n", // Élite Trimestral
   },
   anual: {
-    0: "price_1RV6EKLn2X7paUwsMnsBfM7v", // Básico Semestral
-    1: "price_1RV6KeLn2X7paUws14xsh3zq", // Pro Semestral
-    2: "price_1RV6NkLn2X7paUwshSwf7N2n", // Élite Semestral
+    0: "price_1RV6EKLn2X7paUwsMnsBfM7v", // Básico Anual
+    1: "price_1RV6KeLn2X7paUwspxLi1Dq6", // Pro Anual
+    2: "price_1RV6NkLn2X7paUwsTTgVtJRA", // Élite Anual
   },
 };
 
