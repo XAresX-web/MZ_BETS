@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       line_items: [{ price: priceId, quantity: 1 }],
-      success_url: `${req.headers.origin}/gracias-${planKey}`,
+      success_url: `${req.headers.origin}/gracias/${planKey}`,
       cancel_url: `${req.headers.origin}/#planes`,
     });
 
