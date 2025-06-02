@@ -1,6 +1,6 @@
 const stripePriceTable = {
   mensual: {
-    0: "price_1RV6EKLn2X7paUwsmZGpaxAL", // Básico Mensual
+    0: "prod_SQDtqQQkLsldEH", // Básico Mensual
     1: "price_1RV6JJLn2X7paUwsQC3Ghnje", // Pro Mensual
     2: "price_1RV6MsLn2X7paUwsP2vj7cX6", // Élite Mensual
   },
@@ -17,3 +17,5 @@ const stripePriceTable = {
 };
 
 export default stripePriceTable;
+
+//price_1RV6EKLn2X7paUwsmZGpaxAL
