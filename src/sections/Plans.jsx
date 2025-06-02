@@ -17,26 +17,27 @@ export default function Plans() {
   const data = plansData[lang] || plansData.es;
 
   const handleCheckout = async (planIndex) => {
-    const priceId = stripePriceTable[mode][planIndex];
-
     const planKeys = ["basico", "pro", "elite"];
     const planKey = planKeys[planIndex] || "basico";
+    const priceId = stripePriceTable[mode][planIndex];
 
-    const response = await fetch("/api/create-checkout-session", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ priceId, planKey }),
-    });
+    try {
+      const res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ priceId, planKey }),
+      });
 
-    const data = await response.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      alert("Error al crear la sesión de pago.");
+      const data = await res.json();
+
+      if (data?.url) {
+        window.location.href = data.url;
+      } else {
+        console.error("URL de Stripe no recibida:", data);
+      }
+    } catch (err) {
+      console.error("Error en checkout:", err);
     }
-
-    const { id } = await res.json();
-    await stripe.redirectToCheckout({ sessionId: id });
   };
 
   return (

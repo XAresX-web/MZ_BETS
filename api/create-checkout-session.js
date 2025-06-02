@@ -1,25 +1,25 @@
 import Stripe from "stripe";
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).send("Method Not Allowed");
+    return res.status(405).json({ error: "Método no permitido" });
   }
 
-  try {
-    const { priceId, planKey } = req.body;
+  const { priceId, planKey } = req.body;
 
+  try {
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
-      payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${req.headers.origin}/gracias-${planKey}`,
       cancel_url: `${req.headers.origin}/#planes`,
     });
 
-    return res.status(200).json({ url: session.url });
-  } catch (err) {
-    console.error("❌ Error en Stripe:", err);
-    return res.status(500).json({ error: "Error creating session" });
+    res.status(200).json({ url: session.url });
+  } catch (error) {
+    console.error("Error al crear la sesión:", error.message);
+    res.status(500).json({ error: "Error al crear la sesión de pago" });
   }
 }
