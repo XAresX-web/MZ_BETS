@@ -56,7 +56,7 @@ export default function GraciasBasico() {
       </p>
 
       <a
-        href="https://forms.gle/zbfyqGpRPxRv8vbd7"
+        href="https://forms.gle/1KvJ9C1RpviiMhDh7"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 bg-[#ffc107] text-black font-bold py-3 px-8 rounded-full hover:scale-105 transition z-10"
