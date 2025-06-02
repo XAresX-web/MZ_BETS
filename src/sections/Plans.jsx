@@ -34,7 +34,7 @@ export default function Plans() {
     // priceId esto va debajo
 
     await stripe.redirectToCheckout({
-      lineItems: [{ price: prod_SQDtqQQkLsldEH, quantity: 1 }],
+      lineItems: [{ price: prod_SQE0ssIfI37ykW, quantity: 1 }],
       mode: "subscription",
       successUrl,
       cancelUrl: `${window.location.origin}#planes`,
