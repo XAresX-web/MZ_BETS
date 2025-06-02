@@ -9,7 +9,8 @@ const Footer = () => {
   const links = {
     instagram:
       "https://www.instagram.com/mz_bets_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    telegram: "https://t.me/tu_canal",
+    telegram:
+      "https://t.me/+T4ruxE92sVRkZTAx?fbclid=PAZXh0bgNhZW0CMTEAAacEzC_H7-hh4iFvn939PeYkN5HuoGiU_mTerLXv_v2gb_JbbD38np_vEZjbaA_aem_pKvNoaqYZGozScy0G_nAog",
 
     // PDFs por idioma
     terms: {

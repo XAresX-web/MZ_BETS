@@ -57,7 +57,7 @@ export default function FreeCTA({ lang = "es" }) {
       </motion.p>
 
       <motion.a
-        href="https://l.instagram.com/?u=https%3A%2F%2Ft.me%2F%2BT4ruxE92sVRkZTAx%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAacEzC_H7-hh4iFvn939PeYkN5HuoGiU_mTerLXv_v2gb_JbbD38np_vEZjbaA_aem_pKvNoaqYZGozScy0G_nAog&e=AT058U3xMdIlF3cDumYq4UBHrz4I2c3CAaIbH3i08JZn05rzsUDp262jtWkGBkIxlOf6dHL1zmS6Z4SbHTXYRPSkQEFOyGig3IP-MN4IF-RKxvekR6CskSw"
+        href="https://t.me/+T4ruxE92sVRkZTAx?fbclid=PAZXh0bgNhZW0CMTEAAacEzC_H7-hh4iFvn939PeYkN5HuoGiU_mTerLXv_v2gb_JbbD38np_vEZjbaA_aem_pKvNoaqYZGozScy0G_nAog"
         initial={{ scale: 1 }}
         animate={{ scale: [1, 1.05, 1] }}
         transition={{
