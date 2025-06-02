@@ -1,27 +1,25 @@
+import Stripe from "stripe";
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).send("Método no permitido");
+    return res.status(405).send("Method Not Allowed");
   }
 
   try {
-    console.log("BODY RECIBIDO:", req.body); // 👈 Para depurar
-    const { priceId, planKey, periodo, customerEmail } = req.body;
+    const { priceId, planKey } = req.body;
 
     const session = await stripe.checkout.sessions.create({
-      line_items: [{ price: priceId, quantity: 1 }],
       mode: "subscription",
+      payment_method_types: ["card"],
+      line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${req.headers.origin}/gracias-${planKey}`,
       cancel_url: `${req.headers.origin}/#planes`,
-      customer_email: customerEmail,
-      metadata: {
-        plan: planKey,
-        periodo,
-      },
     });
 
-    res.status(200).json({ id: session.id });
-  } catch (error) {
-    console.error("Error Stripe:", error); // 👈 Muy útil
-    res.status(500).send("A server error occurred");
+    return res.status(200).json({ url: session.url });
+  } catch (err) {
+    console.error("❌ Error en Stripe:", err);
+    return res.status(500).json({ error: "Error creating session" });
   }
 }

@@ -17,21 +17,23 @@ export default function Plans() {
   const data = plansData[lang] || plansData.es;
 
   const handleCheckout = async (planIndex) => {
-    const stripe = await stripePromise;
     const priceId = stripePriceTable[mode][planIndex];
+
     const planKeys = ["basico", "pro", "elite"];
     const planKey = planKeys[planIndex] || "basico";
 
-    const res = await fetch("/api/create-checkout-session", {
+    const response = await fetch("/api/create-checkout-session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        priceId,
-        planKey,
-        periodo: mode,
-        customerEmail: "tucorreo@ejemplo.com", // Puedes capturarlo dinámicamente
-      }),
+      body: JSON.stringify({ priceId, planKey }),
     });
+
+    const data = await response.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert("Error al crear la sesión de pago.");
+    }
 
     const { id } = await res.json();
     await stripe.redirectToCheckout({ sessionId: id });
