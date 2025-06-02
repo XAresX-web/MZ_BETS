@@ -16,28 +16,19 @@ export default function Plans() {
 
   const data = plansData[lang] || plansData.es;
 
-  const handleCheckout = async (planIndex) => {
+  const handleCheckout = async () => {
     const stripe = await stripePromise;
-    const priceId = stripePriceTable[mode][planIndex];
-
-    if (!priceId) {
-      alert("Error al seleccionar el plan.");
-      return;
-    }
-
-    // Solo importa el planIndex para redirigir, no el periodo
-    const planKeys = ["basico", "pro", "elite"];
-    const planKey = planKeys[planIndex] || "basico";
-
-    const successUrl = `${window.location.origin}/gracias-${planKey}`;
-
-    // priceId esto va debajo
 
     await stripe.redirectToCheckout({
-      lineItems: [{ price: prod_SQE0ssIfI37ykW, quantity: 1 }],
+      lineItems: [{ price: "prod_SQDtqQQkLsldEH", quantity: 1 }],
       mode: "subscription",
-      successUrl,
-      cancelUrl: `${window.location.origin}#planes`,
+      successUrl: `${window.location.origin}/gracias-basico`,
+      cancelUrl: `${window.location.origin}/#planes`,
+      customerEmail: "tucorreo@ejemplo.com", // Puedes probar con uno tuyo
+      metadata: {
+        plan: "basico",
+        periodo: "mensual",
+      },
     });
   };
 
