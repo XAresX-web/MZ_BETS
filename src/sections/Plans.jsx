@@ -19,24 +19,22 @@ export default function Plans() {
   const handleCheckout = async (planIndex) => {
     const stripe = await stripePromise;
     const priceId = stripePriceTable[mode][planIndex];
-
-    if (!priceId) {
-      alert("Error al seleccionar el plan.");
-      return;
-    }
-
-    // Solo importa el planIndex para redirigir, no el periodo
     const planKeys = ["basico", "pro", "elite"];
     const planKey = planKeys[planIndex] || "basico";
 
-    const successUrl = `${window.location.origin}/gracias-${planKey}`;
-
-    await stripe.redirectToCheckout({
-      lineItems: [{ price: priceId, quantity: 1 }],
-      mode: "subscription",
-      successUrl,
-      cancelUrl: `${window.location.origin}#planes`,
+    const res = await fetch("/api/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        priceId,
+        planKey,
+        periodo: mode,
+        customerEmail: "tucorreo@ejemplo.com", // Puedes capturarlo dinámicamente
+      }),
     });
+
+    const { id } = await res.json();
+    await stripe.redirectToCheckout({ sessionId: id });
   };
 
   return (
