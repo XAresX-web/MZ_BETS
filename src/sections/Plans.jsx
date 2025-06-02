@@ -25,10 +25,16 @@ export default function Plans() {
       return;
     }
 
+    // Definir redirección personalizada según el plan y periodo
+    const planKeys = ["basico", "pro", "elite"];
+    const planKey = planKeys[planIndex] || "basico";
+
+    const successUrl = `${window.location.origin}/gracias-${planKey}?periodo=${mode}`;
+
     await stripe.redirectToCheckout({
       lineItems: [{ price: priceId, quantity: 1 }],
       mode: "subscription",
-      successUrl: `${window.location.origin}/gracias`,
+      successUrl,
       cancelUrl: `${window.location.origin}#planes`,
     });
   };
